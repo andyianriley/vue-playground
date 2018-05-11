@@ -1,8 +1,11 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <router-link :to="{ name: 'Home' }">Home</router-link> |  
+    <router-link to="/coins/ethereum">Ethereum</router-link> | 
+    <router-link to="/coins/bitcoin">Bitcoin</router-link> | 
+    <router-link to="/star-wars">StarWars</router-link> | 
+    <router-link to="/counter">Counter</router-link><br>
     </div>
     <router-view/>
   </div>

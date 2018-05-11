@@ -1,0 +1,22 @@
+version: '3.2'
+
+services:
+  app:
+    image: andyianriley/vue-playground
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - PORT=9081  
+      - GRAPHQL_HOST=http://graphql:9080/  
+    ports:
+      - "9081:9081"
+    depends_on:
+      - graphql  
+  graphql:
+    image: andyianriley/swapi-graphql
+    environment:
+      - PORT=9080
+    ports:
+      - "9080:9080"      
